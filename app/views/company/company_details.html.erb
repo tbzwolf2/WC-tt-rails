@@ -7,10 +7,10 @@
   <%else %>
     <p style="float: right">Please wait before liking again</p>
   <%end %>
+  <p>Likes: <higlight style="color: blue"><%=@company.likes %></higlight></p>
   <p>Company registered on date: <%=@company_json["date_of_creation"]%></p>
   <p>Registered jurisdiction: <%=@company_json["jurisdiction"].humanize%> </p>
   <p>Has insolvency history?: <%=@company_json["has_insolvency_history"]%></p>
   <p>Has charges?: <%=@company_json["has_charges"]%></p>
   <p>Registered office address: <%=@address[0...-2]%></p>
-  <p>Has insolvency history?: <%=@company_json["has_insolvency_history"]%></p>
 </div>

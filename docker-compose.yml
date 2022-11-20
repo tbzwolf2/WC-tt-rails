@@ -9,6 +9,8 @@ services:
     volumes:
       - ./tmp/postgres_data:/var/lib/postgresql/data
   web:
+    environment:
+      - GOV_API_KEY=26f083e7-41fb-41b1-a20b-8b47555ad37f
     depends_on:
       - 'db'
     build:

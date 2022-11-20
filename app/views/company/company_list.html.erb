@@ -1,12 +1,47 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+    div {
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+
+    }
+
+    ul {
+        list-style-type: none;
+        width: 100%;
+    }
+
+    li {
+        padding: 10px;
+        overflow: auto;
+    }
+
+    li:hover {
+        background: #eee;
+        cursor: pointer;
+    }
+</style>
 <div>
-  <%@company_json.each do |company|%>
-    <details>
-      <summary><%=company["name"] %></summary>
-      <iframe src="/company_details/<%=company["number"]%>" height="160" width="700"></iframe>
-    </details>
-  <% end %>
+  <h1 style="font-size: xx-large">Companies</h1>
+</div>
+<div>
+  <ul>
+    <% @company_json.each do |company| %>
+      <li>
+        <details>
+          <summary><%= company["name"].humanize %> </summary>
+          <br>
+          <iframe src="/company_details/<%= company["number"] %>" height=100% width=100%></iframe>
+        </details>
+      </li>
+    <% end %>
+  </ul>
 </div>
