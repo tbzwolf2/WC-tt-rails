@@ -1,0 +1,12 @@
+
+<h1 class="text-3xl font-bold underline">
+  Hello world!
+</h1>
+<div>
+  <%@company_json.each do |company|%>
+    <details>
+      <summary><%=company["name"] %></summary>
+      <iframe src="/company_details/<%=company["number"]%>" height="160" width="700"></iframe>
+    </details>
+  <% end %>
+</div>

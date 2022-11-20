@@ -1,0 +1,16 @@
+<div>
+  <%if @like_button_bool%>
+    <%= form_tag "/company_details/#{params[:api_id]}", :method => 'get' do %>
+      <%= hidden_field_tag 'liked', true %>
+      <%= image_submit_tag "like.png", height: '40', width: '100', style: "float:right" %>
+    <% end %>
+  <%else %>
+    <p style="float: right">Please wait before liking again</p>
+  <%end %>
+  <p>Company registered on date: <%=@company_json["date_of_creation"]%></p>
+  <p>Registered jurisdiction: <%=@company_json["jurisdiction"].humanize%> </p>
+  <p>Has insolvency history?: <%=@company_json["has_insolvency_history"]%></p>
+  <p>Has charges?: <%=@company_json["has_charges"]%></p>
+  <p>Registered office address: <%=@address[0...-2]%></p>
+  <p>Has insolvency history?: <%=@company_json["has_insolvency_history"]%></p>
+</div>
