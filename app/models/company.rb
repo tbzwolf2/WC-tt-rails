@@ -1,5 +1,6 @@
 class Company < ApplicationRecord
 
+  #Simple method to use gov api with auth
   def self.get_gov_api(url)
     uri = URI(url)
     req = Net::HTTP::Get.new(uri)

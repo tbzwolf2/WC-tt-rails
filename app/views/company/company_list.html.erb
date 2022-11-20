@@ -39,7 +39,7 @@
         <details>
           <summary><%= company["name"].humanize %> </summary>
           <br>
-          <iframe src="/company_details/<%= company["number"] %>" height=100% width=100%></iframe>
+          <iframe id="<%= company["number"] %>" src="/company_details/<%= company["number"] %>" height=100% width=100%></iframe>
         </details>
       </li>
     <% end %>
